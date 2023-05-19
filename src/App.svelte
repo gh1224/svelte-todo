@@ -58,10 +58,14 @@
 			addTodoItem();
 		}
 	}
+
+	function handleRemoveTodo(id) {
+		todos = todos.filter((todo) => todo.id !== id);
+	}
 </script>
 
 <div class="app">
 	<TodoHeader bind:todoValue {handleTodoInputKeyup} />
 	<TodoInfo />
-	<TodoList {todos} {handleCheckTodo} />
+	<TodoList {todos} {handleCheckTodo} {handleRemoveTodo} />
 </div>
